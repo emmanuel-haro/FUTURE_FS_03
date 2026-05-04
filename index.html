@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Savanna Spice | African Fusion Restaurant</title>
+  <meta name="description" content="Savanna Spice is a vibrant African fusion restaurant offering bold flavors, warm hospitality, and unforgettable dining experiences.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="#home" class="logo">
+        <span class="logo-mark">SS</span>
+        <span>Savanna Spice</span>
+      </a>
+      <button class="menu-toggle" aria-label="Open Menu" aria-expanded="false">☰</button>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-pattern"></div>
+      <div class="container hero-content">
+        <div>
+          <p class="eyebrow">Taste Africa, Reimagined</p>
+          <h1>Bold African Flavors in a Beautiful Modern Space</h1>
+          <p class="hero-text">
+            Savanna Spice blends East, West, and Southern African culinary traditions into dishes made for everyday joy and special moments.
+          </p>
+          <div class="hero-buttons">
+            <a href="#menu" class="btn btn-primary">Explore Menu</a>
+            <a href="#contact" class="btn btn-outline">Reserve a Table</a>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <h2>Today&apos;s Signature</h2>
+          <p class="dish">Jollof Risotto with Grilled Suya Chicken</p>
+          <p class="price">$17.90</p>
+          <p class="small">Chef-crafted, smoky, spicy, and unforgettable.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about" class="about section container">
+      <div class="section-title">
+        <p class="eyebrow">Our Story</p>
+        <h2>Built on Culture, Community, and Craft</h2>
+      </div>
+      <div class="about-grid">
+        <article>
+          <h3>Authentic Inspiration</h3>
+          <p>
+            From Moroccan spices to Kenyan grills and Nigerian comfort food, we celebrate the diversity of African cuisine in every plate.
+          </p>
+        </article>
+        <article>
+          <h3>Fresh Local Ingredients</h3>
+          <p>
+            We partner with local farmers and suppliers to deliver quality ingredients, vibrant taste, and sustainable dining choices.
+          </p>
+        </article>
+        <article>
+          <h3>Warm Hospitality</h3>
+          <p>
+            Our team welcomes every guest like family, creating a joyful space for quick lunches, date nights, and group celebrations.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="menu" class="menu section">
+      <div class="container">
+        <div class="section-title center">
+          <p class="eyebrow">Popular Picks</p>
+          <h2>Customer Favorites</h2>
+        </div>
+        <div class="menu-grid">
+          <article class="menu-item">
+            <h3>Swahili Coconut Fish</h3>
+            <p>Pan-seared fish in creamy coconut sauce with fragrant rice.</p>
+            <span>$15.50</span>
+          </article>
+          <article class="menu-item">
+            <h3>Suya Beef Skewers</h3>
+            <p>Char-grilled beef with spicy peanut rub and lime slaw.</p>
+            <span>$12.00</span>
+          </article>
+          <article class="menu-item">
+            <h3>Egusi Veg Bowl</h3>
+            <p>Rich melon-seed stew with greens and soft pounded yam.</p>
+            <span>$11.40</span>
+          </article>
+          <article class="menu-item">
+            <h3>Berbere Chicken Wrap</h3>
+            <p>Tender chicken, berbere aioli, pickled onions, and greens.</p>
+            <span>$9.80</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="gallery section container">
+      <div class="section-title">
+        <p class="eyebrow">Experience</p>
+        <h2>A Place Full of Color and Flavor</h2>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-card"><span>Chef Live Cooking</span></div>
+        <div class="gallery-card"><span>Signature Platters</span></div>
+        <div class="gallery-card"><span>Cozy Evening Dining</span></div>
+        <div class="gallery-card"><span>Weekend Afro-Jazz Nights</span></div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact section">
+      <div class="container contact-wrap">
+        <div>
+          <p class="eyebrow">Visit Us</p>
+          <h2>Reserve Your Table Today</h2>
+          <p>Open daily 10:00 AM - 11:00 PM</p>
+          <p>22 Market Avenue, City Center</p>
+          <p>+1 (555) 019-2244</p>
+        </div>
+        <form class="booking-form">
+          <label>
+            Name
+            <input type="text" placeholder="Your full name" required>
+          </label>
+          <label>
+            Phone
+            <input type="tel" placeholder="Your phone number" required>
+          </label>
+          <label>
+            Date
+            <input type="date" required>
+          </label>
+          <button type="submit" class="btn btn-primary">Book Now</button>
+          <p class="form-message" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>&copy; <span id="year"></span> Savanna Spice. All rights reserved.</p>
+      <p>Designed for real local business growth.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
