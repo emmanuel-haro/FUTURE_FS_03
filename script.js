@@ -24,9 +24,38 @@ if (menuToggle && navLinks) {
 }
 
 if (bookingForm && formMessage) {
-  bookingForm.addEventListener("submit", (event) => {
+  bookingForm.addEventListener("submit", async (event) => {
     event.preventDefault();
-    formMessage.textContent = "Thanks! Your reservation request has been received.";
-    bookingForm.reset();
+    formMessage.textContent = "Sending your booking details...";
+
+    const formData = new FormData(bookingForm);
+    const payload = {
+      name: formData.get("name")?.toString().trim(),
+      phone: formData.get("phone")?.toString().trim(),
+      date: formData.get("date")?.toString().trim(),
+    };
+
+    try {
+      const response = await fetch("/api/bookings", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        formMessage.textContent = result.error || "Unable to submit booking. Please try again.";
+        return;
+      }
+
+      formMessage.textContent = result.message || "Thanks! Your reservation request has been received.";
+      bookingForm.reset();
+    } catch (error) {
+      console.error(error);
+      formMessage.textContent = "There was a problem sending your booking. Please try again later.";
+    }
   });
 }
