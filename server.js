@@ -61,14 +61,23 @@ const Booking = mongoose.model("Booking", bookingSchema);
 
 app.post("/api/bookings", async (req, res) => {
   try {
+    console.log("📨 Booking request received:", {
+      body: req.body,
+      contentType: req.headers["content-type"],
+    });
+
     const { name, phone, date } = req.body;
 
     if (!name || !phone || !date) {
+      console.log("❌ Validation failed. Received:", { name, phone, date });
       return res.status(400).json({ error: "Name, phone, and date are required." });
     }
 
+    console.log("✅ Booking validated:", { name, phone, date });
+
     const booking = new Booking({ name, phone, date });
     await booking.save();
+    console.log("💾 Booking saved to MongoDB:", booking._id);
 
     let emailStatus = "skipped";
     if (isEmailConfigured && emailVerified) {
@@ -81,10 +90,13 @@ app.post("/api/bookings", async (req, res) => {
 
       await transporter.sendMail(mailOptions);
       emailStatus = "sent";
+      console.log("📧 Email sent to", EMAIL_RECIPIENT);
     } else if (isEmailConfigured && !emailVerified) {
       emailStatus = "not verified";
+      console.log("⚠️  Email not verified");
     }
 
+    console.log("✅ Response sent with emailStatus:", emailStatus);
     return res.json({
       message: "Booking saved successfully.",
       emailStatus,
